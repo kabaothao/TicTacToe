@@ -8,7 +8,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            int[] board = new int[9]; //they're 9 tiles
+            int[] board = new int[9]; // show 9 tiles
             board[0] = 0;
             board[1] = 0;
             board[2] = 0;
@@ -21,7 +21,12 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             for (int i = 0; i < 9; i++)
             {
-                Console.WriteLine("Square " + i " contains " + board);
+                // print the board.
+                // Console.WriteLine("Square " + i + " contains " + board[i]);
+
+                // print x or o for each sqaure
+                // 0 means unoccupied. 1 means player 1 (X) 2 means player 2 (O)
+
             }
 
 
