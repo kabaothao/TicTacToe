@@ -27,6 +27,27 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 // print x or o for each sqaure
                 // 0 means unoccupied. 1 means player 1 (X) 2 means player 2 (O)
 
+                if (board[i] == 0)
+                {
+                    Console.Write(".");
+                }
+                if (board[i] == 1)
+                {
+                    Console.Write("X");
+                }
+                if (board[i] == 2)
+                {
+                    Console.Write("O");
+                }
+
+                //print a new line every 3rd character
+                if (i == 2 || i == 5 || i ==8)
+                {
+                    Console.WriteLine("");
+                }
+
+
+
             }
 
 
