@@ -4,11 +4,12 @@ using System;
 
 namespace MyApp // Note: actual namespace depends on the project name.
 {
-    internal class Program
+    public class Program
     {
+        static int[] board = new int[9]; // show 9 tiles
         static void Main(string[] args)
         {
-            int[] board = new int[9]; // show 9 tiles
+            
             board[0] = 0;
             board[1] = 0;
             board[2] = 0;
@@ -19,6 +20,27 @@ namespace MyApp // Note: actual namespace depends on the project name.
             board[7] = 0;
             board[8] = 1;
 
+            int userTurn;
+            Random rand = new Random(); //the computer will choose something for you.
+
+            while (true)
+            {
+                printBoard();
+
+                Console.WriteLine("Please enter a number from 0 to 8");
+                userTurn = int.Parse(Console.ReadLine());
+                Console.WriteLine("You typed " + userTurn);
+
+                board[userTurn] = 1;
+                printBoard();
+            }
+
+
+
+        }
+
+        private static void printBoard()
+        {
             for (int i = 0; i < 9; i++)
             {
                 // print the board.
@@ -41,17 +63,13 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 }
 
                 //print a new line every 3rd character
-                if (i == 2 || i == 5 || i ==8)
+                if (i == 2 || i == 5 || i == 8)
                 {
                     Console.WriteLine("");
                 }
 
-
-
             }
-
-
-
         }
+
     }
 }
