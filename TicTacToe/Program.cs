@@ -20,19 +20,34 @@ namespace MyApp // Note: actual namespace depends on the project name.
             board[7] = 0;
             board[8] = 1;
 
-            int userTurn;
-            Random rand = new Random(); //the computer will choose something for you.
+            int userTurn= -1;
+            int computerTurn= -1;
+            Random rand = new Random(); //the computer will choose something for you. 
+
 
             while (true)
             {
-                printBoard();
-
-                Console.WriteLine("Please enter a number from 0 to 8");
-                userTurn = int.Parse(Console.ReadLine());
-                Console.WriteLine("You typed " + userTurn);
+                //don't allow the human to choose an already occupied square
+                while (userTurn == -1 || board[userTurn] != 0)
+                {
+                    Console.WriteLine("Please enter a number from 0 to 8");
+                    userTurn = int.Parse(Console.ReadLine());
+                    Console.WriteLine("You typed " + userTurn);
+                }
 
                 board[userTurn] = 1;
+
+                //don't let the computer pick an invalid number
+                while(computerTurn == -1 || board[computerTurn] != 0)
+                {
+                    computerTurn = rand.Next(8); //pick a random number 
+                    board[computerTurn] = 2; //assign to the board
+                    Console.WriteLine("Computer chooses " + computerTurn);
+                }
+
+
                 printBoard();
+
             }
 
 
