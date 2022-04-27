@@ -25,7 +25,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Random rand = new Random(); //the computer will choose something for you. 
 
 
-            while (true)
+            while (checkForWinner() == 0) 
             {
                 //don't allow the human to choose an already occupied square
                 while (userTurn == -1 || board[userTurn] != 0)
@@ -74,6 +74,36 @@ namespace MyApp // Note: actual namespace depends on the project name.
             if (board[6] == board[7] && board[7] == board[8])
             {
                 return board[6];
+            }
+
+            //first column
+            if (board[0] == board[3] && board[3] == board[6])
+            {
+                return board[0];
+            }
+
+            //second column
+            if (board[1] == board[4] && board[4] == board[7])
+            {
+                return board[1];
+            }
+
+            //third column
+            if (board[2] == board[5] && board[5] == board[8])
+            {
+                return board[2];
+            }
+
+            //first diagonal
+            if (board[0] == board[4] && board[4] == board[8])
+            {
+                return board[0];
+            }
+
+            //second diagonal
+            if (board[2] == board[4] && board[4] == board[6])
+            {
+                return board[2];
             }
 
 
