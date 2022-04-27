@@ -62,14 +62,16 @@ namespace TicTacGUI
                 MessageBox.Show("The board is full.");
                 disableAllButtons();
             }
-            else
+            else if (game.checkForWinner() == 1)
             {
+                MessageBox.Show("Player human wins!");
+                disableAllButtons();
+
+            }
+            else
                 // computer turn
                 computerChoose();
-            }
-
-         
-
+       
 
         }
 
@@ -77,7 +79,7 @@ namespace TicTacGUI
         {
             foreach (var item in buttons)
             {
-                item.Enabled
+                item.Enabled = false;
             }
         }
 
