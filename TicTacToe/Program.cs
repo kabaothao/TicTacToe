@@ -41,10 +41,10 @@ namespace MyApp // Note: actual namespace depends on the project name.
                 while(computerTurn == -1 || board[computerTurn] != 0)
                 {
                     computerTurn = rand.Next(8); //pick a random number 
-                    board[computerTurn] = 2; //assign to the board
                     Console.WriteLine("Computer chooses " + computerTurn);
                 }
 
+                board[computerTurn] = 2; //assign to the board
 
                 printBoard();
 
@@ -52,6 +52,32 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
 
 
+        }
+
+        private static int checkForWinner()
+        {
+            //return a 0 if nobody won. return the player number if they won.
+            
+            //top row
+            if (board[0] == board[1] && board[1] == board[2])
+            {
+                return board[0];
+            }
+
+            //second row
+            if (board[0] == board[4] && board[4] == board[5])
+            {
+                return board[3];
+            }
+
+            //third row
+            if (board[6] == board[7] && board[7] == board[8])
+            {
+                return board[6];
+            }
+
+
+            return 0;
         }
 
         private static void printBoard()
