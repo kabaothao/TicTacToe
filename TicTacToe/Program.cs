@@ -6,19 +6,16 @@ namespace MyApp // Note: actual namespace depends on the project name.
 {
     public class Program
     {
+        
+        // board is the data store for the game
         static int[] board = new int[9]; // show 9 tiles
         static void Main(string[] args)
         {
-            
-            board[0] = 0;
-            board[1] = 0;
-            board[2] = 0;
-            board[3] = 1;
-            board[4] = 2;
-            board[5] = 0;
-            board[6] = 0;
-            board[7] = 0;
-            board[8] = 1;
+            // set all squares to empty
+            for (int i = 0; i < 9; i++)
+            {
+                board[i] = 0;
+            }
 
             int userTurn= -1;
             int computerTurn= -1;
@@ -50,6 +47,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
 
             }
 
+            Console.WriteLine("Player " + checkForWinner() +  " won the game!");
 
 
         }
