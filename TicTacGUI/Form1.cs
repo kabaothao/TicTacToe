@@ -130,7 +130,7 @@ namespace TicTacGUI
                 {
                     buttons[i].Text = "";
                     buttons[i].Enabled = true;
-                    buttons[i].ForeColor = Color.Black;
+                    buttons[i].ForeColor = Color.Black; //color doesn't work due to the disableallbuttons
                 }
                 else if (game.Grid[i] == 1)
                 {
